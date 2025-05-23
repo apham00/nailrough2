@@ -1,31 +1,105 @@
-body {
-  font-family: Arial, sans-serif;
+/* Reset & global settings */
+* {
   margin: 0;
   padding: 0;
-  line-height: 1.6;
+  box-sizing: border-box;
 }
 
-header {
-  background: #e91e63;
-  color: white;
-  padding: 1em;
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background-color: #fff8f9;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+/* Navigation */
+nav {
+  background-color: #e91e63;
+  padding: 1em 0.5em;
   text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 nav a {
   color: white;
-  margin: 0 10px;
   text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.2s ease-in-out;
 }
 
+nav a:hover {
+  color: #ffc1d6;
+}
+
+/* Hero Section */
 main {
-  padding: 2em;
+  padding: 4em 2em;
   text-align: center;
+  background: linear-gradient(to bottom, #fff8f9 0%, #ffe2ec 100%);
 }
 
-footer {
-  background: #333;
+main h1 {
+  font-size: 2.8rem;
+  color: #e91e63;
+  margin-bottom: 1em;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+main p {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Call to Action Button */
+a[href="book.html"]:last-of-type {
+  display: inline-block;
+  margin-top: 2em;
+  padding: 12px 24px;
+  background-color: #e91e63;
   color: white;
-  padding: 1em;
-  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+a[href="book.html"]:last-of-type:hover {
+  background-color: #d81b60;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Nav (Mobile first approach) */
+@media (max-width: 768px) {
+  nav a {
+    display: block;
+    margin: 10px 0;
+    font-size: 1.1rem;
+  }
+
+  a[href="book.html"]:last-of-type {
+    display: block;
+    width: 80%;
+    margin: 2em auto 0;
+  }
 }
